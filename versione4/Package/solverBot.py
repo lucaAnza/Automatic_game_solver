@@ -190,123 +190,6 @@ dizionario_movimenti = {
     'M[5][4] alto': 'alt+2',
 }
 
-x_start = 920
-offset = 95
-y_startR0 = 395
-y_startR1 = y_startR0+offset
-y_startR2 = y_startR1+offset
-y_startR3 = y_startR2+offset
-y_startR4 = y_startR3+offset
-y_startR5 = y_startR4+offset
-
-
-dizionario_movimenti_nativo = {
-    # R0
-    'M[0][0] basso': (x_start , y_startR0 , x_start , y_startR0+offset),
-    'M[0][0] dx': (x_start , y_startR0 , x_start+offset , y_startR0),
-    'M[0][1] sx': (x_start+(offset) , y_startR0 , x_start+(offset)-offset , y_startR0),
-    'M[0][1] basso': (x_start+(offset) , y_startR0 , x_start+(offset) , y_startR0+offset),
-    'M[0][1] dx':  (x_start+(offset) , y_startR0 , x_start+(offset)+offset , y_startR0),
-    'M[0][2] sx':  (x_start+(offset*2) , y_startR0 , x_start+(offset*2)-offset , y_startR0),
-    'M[0][2] basso':  (x_start+(offset*2) , y_startR0 , x_start+(offset*2) , y_startR0+offset),
-    'M[0][2] dx':  (x_start+(offset*2) , y_startR0 , x_start+(offset*2)+offset , y_startR0),
-    'M[0][3] sx':  (x_start+(offset*3) , y_startR0 , x_start+(offset*3)-offset , y_startR0),
-    'M[0][3] basso':  (x_start+(offset*3) , y_startR0 , x_start+(offset*3) , y_startR0+offset),
-    'M[0][3] dx':  (x_start+(offset*3) , y_startR0 , x_start+(offset*3)+offset , y_startR0),
-    'M[0][4] sx':  (x_start+(offset*4) , y_startR0 , x_start+(offset*4)-offset , y_startR0),
-    'M[0][4] basso':  (x_start+(offset*4) , y_startR0 , x_start+(offset*4) , y_startR0+offset),
-    # R1
-    'M[1][0] basso': (x_start,y_startR1,x_start,y_startR1+offset),
-    'M[1][0] dx': (x_start,y_startR1,x_start+offset,y_startR1),
-    'M[1][0] alto': (x_start,y_startR1,x_start,y_startR1-offset),
-    'M[1][1] sx': (x_start+(offset),y_startR1,x_start+(offset)-offset,y_startR1),
-    'M[1][1] basso': (x_start+(offset),y_startR1,(x_start+(offset)),y_startR1+offset),
-    'M[1][1] dx': (x_start+(offset),y_startR1,x_start+(offset)+offset,y_startR1),
-    'M[1][1] alto': (x_start+(offset),y_startR1,x_start+(offset),y_startR1-offset),
-    'M[1][2] sx': (x_start+(offset*2),y_startR1,x_start+(offset*2)-offset,y_startR1),
-    'M[1][2] basso': (x_start+(offset*2),y_startR1,x_start+(offset*2),y_startR1+offset),
-    'M[1][2] dx': (x_start+(offset*2),y_startR1,x_start+(offset*2)+offset,y_startR1),
-    'M[1][2] alto': (x_start+(offset*2),y_startR1,x_start+(offset*2),y_startR1-offset),
-    'M[1][3] sx': (x_start+(offset*3),y_startR1,x_start+(offset*3)-offset,y_startR1),
-    'M[1][3] basso': (x_start+(offset*3),y_startR1,x_start+(offset*3),y_startR1+offset),
-    'M[1][3] dx': (x_start+(offset*3),y_startR1,x_start+(offset*3)+offset,y_startR1),
-    'M[1][3] alto': (x_start+(offset*3),y_startR1,x_start+(offset*3),y_startR1-offset),
-    'M[1][4] sx': (x_start+(offset*4),y_startR1,x_start+(offset*4)-offset,y_startR1),
-    'M[1][4] basso': (x_start+(offset*4),y_startR1,x_start+(offset*4),y_startR1+offset),
-    'M[1][4] alto': (x_start+(offset*4),y_startR1,x_start+(offset*4),y_startR1-offset),
-    # R2
-    'M[2][0] basso': (x_start,y_startR2,x_start,y_startR2+offset),
-    'M[2][0] dx': (x_start,y_startR2,x_start+offset,y_startR2),
-    'M[2][0] alto': (x_start,y_startR2,x_start,y_startR2-offset),
-    'M[2][1] sx': (x_start+(offset),y_startR2,x_start+(offset)-offset,y_startR2),
-    'M[2][1] basso': (x_start+(offset),y_startR2,(x_start+(offset)),y_startR2+offset),
-    'M[2][1] dx': (x_start+(offset),y_startR2,x_start+(offset)+offset,y_startR2),
-    'M[2][1] alto': (x_start+(offset),y_startR2,x_start+(offset),y_startR2-offset),
-    'M[2][2] sx': (x_start+(offset*2),y_startR2,x_start+(offset*2)-offset,y_startR2),
-    'M[2][2] basso': (x_start+(offset*2),y_startR2,x_start+(offset*2),y_startR2+offset),
-    'M[2][2] dx': (x_start+(offset*2),y_startR2,x_start+(offset*2)+offset,y_startR2),
-    'M[2][2] alto': (x_start+(offset*2),y_startR2,x_start+(offset*2),y_startR2-offset),
-    'M[2][3] sx': (x_start+(offset*3),y_startR2,x_start+(offset*3)-offset,y_startR2),
-    'M[2][3] basso': (x_start+(offset*3),y_startR2,x_start+(offset*3),y_startR2+offset),
-    'M[2][3] dx': (x_start+(offset*3),y_startR2,x_start+(offset*3)+offset,y_startR2),
-    'M[2][3] alto': (x_start+(offset*3),y_startR2,x_start+(offset*3),y_startR2-offset),
-    'M[2][4] sx': (x_start+(offset*4),y_startR2,x_start+(offset*4)-offset,y_startR2),
-    'M[2][4] basso': (x_start+(offset*4),y_startR2,x_start+(offset*4),y_startR2+offset),
-    'M[2][4] alto': (x_start+(offset*4),y_startR2,x_start+(offset*4),y_startR2-offset),
-    # R3
-    'M[3][0] basso': (x_start,y_startR3,x_start,y_startR3+offset),
-    'M[3][0] dx':(x_start,y_startR3,x_start+offset,y_startR3),
-    'M[3][0] alto': (x_start,y_startR3,x_start,y_startR3-offset),
-    'M[3][1] sx': (x_start+(offset),y_startR3,x_start+(offset)-offset,y_startR3),
-    'M[3][1] basso': (x_start+(offset),y_startR3,(x_start+(offset)),y_startR3+offset),
-    'M[3][1] dx': (x_start+(offset),y_startR3,x_start+(offset)+offset,y_startR3),
-    'M[3][1] alto': (x_start+(offset),y_startR3,x_start+(offset),y_startR3-offset),
-    'M[3][2] sx': (x_start+(offset*2),y_startR3,x_start+(offset*2)-offset,y_startR3),
-    'M[3][2] basso': (x_start+(offset*2),y_startR3,x_start+(offset*2),y_startR3+offset),
-    'M[3][2] dx': (x_start+(offset*2),y_startR3,x_start+(offset*2)+offset,y_startR3),
-    'M[3][2] alto': (x_start+(offset*2),y_startR3,x_start+(offset*2),y_startR3-offset),
-    'M[3][3] sx': (x_start+(offset*3),y_startR3,x_start+(offset*3)-offset,y_startR3),
-    'M[3][3] basso': (x_start+(offset*3),y_startR3,x_start+(offset*3),y_startR3+offset),
-    'M[3][3] dx': (x_start+(offset*3),y_startR3,x_start+(offset*3)+offset,y_startR3),
-    'M[3][3] alto': (x_start+(offset*3),y_startR3,x_start+(offset*3),y_startR3-offset),
-    'M[3][4] sx': (x_start+(offset*4),y_startR3,x_start+(offset*4)-offset,y_startR3),
-    'M[3][4] basso': (x_start+(offset*4),y_startR3,x_start+(offset*4),y_startR3+offset),
-    'M[3][4] alto': (x_start+(offset*4),y_startR3,x_start+(offset*4),y_startR3-offset),
-       # R4
-    'M[4][0] basso': (x_start,y_startR4,x_start,y_startR4+offset),
-    'M[4][0] dx': (x_start,y_startR4,x_start+offset,y_startR4),
-    'M[4][0] alto': (x_start,y_startR4,x_start,y_startR4-offset),
-    'M[4][1] sx': (x_start+(offset),y_startR4,x_start+(offset)-offset,y_startR4),
-    'M[4][1] basso': (x_start+(offset),y_startR4,(x_start+(offset)),y_startR4+offset),
-    'M[4][1] dx': (x_start+(offset),y_startR4,x_start+(offset)+offset,y_startR4),
-    'M[4][1] alto': (x_start+(offset),y_startR4,x_start+(offset),y_startR4-offset),
-    'M[4][2] sx': (x_start+(offset*2),y_startR4,x_start+(offset*2)-offset,y_startR4),
-    'M[4][2] basso': (x_start+(offset*2),y_startR4,x_start+(offset*2),y_startR4+offset),
-    'M[4][2] dx': (x_start+(offset*2),y_startR4,x_start+(offset*2)+offset,y_startR4),
-    'M[4][2] alto': (x_start+(offset*2),y_startR4,x_start+(offset*2),y_startR4-offset),
-    'M[4][3] sx': (x_start+(offset*3),y_startR4,x_start+(offset*3)-offset,y_startR4),
-    'M[4][3] basso': (x_start+(offset*3),y_startR4,x_start+(offset*3),y_startR4+offset),
-    'M[4][3] dx': (x_start+(offset*3),y_startR4,x_start+(offset*3)+offset,y_startR4),
-    'M[4][3] alto': (x_start+(offset*3),y_startR4,x_start+(offset*3),y_startR4-offset),
-    'M[4][4] sx': (x_start+(offset*4),y_startR4,x_start+(offset*4)-offset,y_startR4),
-    'M[4][4] basso': (x_start+(offset*4),y_startR4,x_start+(offset*4),y_startR4+offset),
-    'M[4][4] alto':  (x_start+(offset*4),y_startR4,x_start+(offset*4),y_startR4-offset),
-    # R5
-    'M[5][0] dx': (x_start,y_startR5,x_start+offset,y_startR5),
-    'M[5][0] alto': (x_start,y_startR5,x_start,y_startR5-offset),
-    'M[5][1] sx': (x_start+(offset),y_startR5,x_start+(offset)-offset,y_startR5),
-    'M[5][1] dx': (x_start+(offset),y_startR5,x_start+(offset)+offset,y_startR5),
-    'M[5][1] alto': (x_start+(offset),y_startR5,x_start+(offset),y_startR5-offset),
-    'M[5][2] sx': (x_start+(offset*2),y_startR5,x_start+(offset*2)-offset,y_startR5),
-    'M[5][2] dx': (x_start+(offset*2),y_startR5,x_start+(offset*2)+offset,y_startR5),
-    'M[5][2] alto': (x_start+(offset*2),y_startR5,x_start+(offset*2),y_startR5-offset),
-    'M[5][3] sx': (x_start+(offset*3),y_startR5,x_start+(offset*3)-offset,y_startR5),
-    'M[5][3] dx': (x_start+(offset*3),y_startR5,x_start+(offset*3)+offset,y_startR5),
-    'M[5][3] alto': (x_start+(offset*3),y_startR5,x_start+(offset*3),y_startR5-offset),
-    'M[5][4] sx': (x_start+(offset*4),y_startR5,x_start+(offset*4)-offset,y_startR5),
-    'M[5][4] alto': (x_start+(offset*4),y_startR5,x_start+(offset*4),y_startR5-offset),
-}
-
 
 @decoratori.timestamp_decorator
 def send_input_gui(string):
@@ -399,8 +282,6 @@ def valid_col_bound(i):
         return True
     p.print_red_ts(f"(((OOB)))")
     return False
-
-# @decoratori.timestamp_decorator
 
 
 def check_column_feasibility(i, j, matrice):
@@ -526,16 +407,9 @@ def scan_matrice(matrice):
             c = c-offset
             p.print_magenta_ts(f"Stella trovata in posizione [{i}][{c}]")
             if (i == 5):    # Nel caso la stella sia in fondo
-                # OLD = send_input_gui(dizionario_movimenti[f'M[{i}][{c}] alto'])
-                print(f'dizionario_movimenti_nativo[M[{i}][{c}] alto]')
-                cc = dizionario_movimenti_nativo[f'M[{i}][{c}] alto']
-                send_native_touch( start=(cc[0] , cc[1]) , end = (cc[2] , cc[3]))
+                send_input_gui(dizionario_movimenti[f'M[{i}][{c}] alto'])
             else:
-                # OLD = send_input_gui(dizionario_movimenti[f'M[{i}][{c}] basso'])
-                print(f'dizionario_movimenti_nativo[M[{i}][{c}] basso]')
-                cc = dizionario_movimenti_nativo[f'M[{i}][{c}] basso']
-                send_native_touch( start=(cc[0] , cc[1]) , end = (cc[2] , cc[3]))
-            mossa = True
+                send_input_gui(dizionario_movimenti[f'M[{i}][{c}] basso'])
             break
         # Condizione di adiacenza sulla riga
         elif len(l_adj) > 0:
@@ -549,10 +423,7 @@ def scan_matrice(matrice):
                 move = check_row_feasibility(i, l_adj[k], matrice)
                 if move and isinstance(move, str):  # mossa valida trovata
                     p.print_magenta_ts("pass!")
-                    # OLD =  send_input_gui(dizionario_movimenti[move])
-                    print(f'dizionario_movimenti_nativo[{move}]]')
-                    cc = dizionario_movimenti_nativo[move]
-                    send_native_touch( start=(cc[0] , cc[1]) , end = (cc[2] , cc[3]))
+                    send_input_gui(dizionario_movimenti[move])
                     mossa = True
                     break
                 print()
@@ -578,10 +449,7 @@ def scan_matrice(matrice):
                     move2 = check_column_feasibility(col_adj[k], j, matrice)
                     if move2 and isinstance(move2, str):  # mossa valida trovata
                         p.print_magenta_ts("pass!")
-                        # OLD =  send_input_gui(dizionario_movimenti[move2])
-                        print(f'dizionario_movimenti_nativo[{move2}]]')
-                        cc = dizionario_movimenti_nativo[move2]
-                        send_native_touch( start=(cc[0] , cc[1]) , end = (cc[2] , cc[3]))
+                        send_input_gui(dizionario_movimenti[move2])
                         exit = True
                         mossa = True
                         break
@@ -609,10 +477,7 @@ def scan_matrice(matrice):
                     move = check_hop_row_feasibility(i, hops_or[k], matrice)
                     if move and isinstance(move, str):
                         p.print_magenta_ts("pass!")
-                        # OLD =  send_input_gui(dizionario_movimenti[move])
-                        print(f'dizionario_movimenti_nativo[{move}]]')
-                        cc = dizionario_movimenti_nativo[move]
-                        send_native_touch( start=(cc[0] , cc[1]) , end = (cc[2] , cc[3]))
+                        send_input_gui(dizionario_movimenti[move])
                         mossa = True
                         break
 
@@ -635,10 +500,7 @@ def scan_matrice(matrice):
                             hops_vert[k], j, matrice)
                         if move2 and isinstance(move2, str):
                             p.print_magenta_ts("pass!")
-                            # OLD =  send_input_gui(dizionario_movimenti[move2])
-                            print(f'dizionario_movimenti_nativo[{move2}]]')
-                            cc = dizionario_movimenti_nativo[move2]
-                            send_native_touch( start=(cc[0] , cc[1]) , end = (cc[2] , cc[3]))
+                            send_input_gui(dizionario_movimenti[move2])
                             mossa = True
                             break
         if mossa != True:
