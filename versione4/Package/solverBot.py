@@ -203,17 +203,6 @@ def send_input_gui(string):
         p.print_green_ts(f"Pressed Key: {c1}")
         pyautogui.press(c1, interval=delay_keyPress_single)
 
-#Funzione che dati in input start(x,y) e end(x,y) clicca sullo schermo partendo da start e arriva in end in speed secondi.
-@decoratori.timestamp_decorator
-def send_native_touch( start = (0,0) , end = (0,0) , speed = 0.08 ):
-    print(f"clicked - start = ({start[0] , start[1]}) e end = ({end[0] , end[1]})")
-    pyautogui.moveTo(start, duration=0.001)
-    pyautogui.mouseDown()  #Click left mouse
-    pyautogui.moveTo(end , duration=speed)  
-    pyautogui.mouseUp()  #Release left mouse
-    pyautogui.moveTo(1205,960, duration=0.001)  # esci dalla zona utile
-
-
 
 # Funzione che ritorna l'indice di colonna del primo elemento di una successione di 2
 def check_adj_row(l):
@@ -282,7 +271,6 @@ def valid_col_bound(i):
         return True
     p.print_red_ts(f"(((OOB)))")
     return False
-
 
 def check_column_feasibility(i, j, matrice):
     el1 = matrice[i][j]
@@ -410,6 +398,7 @@ def scan_matrice(matrice):
                 send_input_gui(dizionario_movimenti[f'M[{i}][{c}] alto'])
             else:
                 send_input_gui(dizionario_movimenti[f'M[{i}][{c}] basso'])
+            mossa = True
             break
         # Condizione di adiacenza sulla riga
         elif len(l_adj) > 0:
