@@ -82,114 +82,6 @@ mm6 = [
     [4, 3, 4, 3, 4]
 ]
 
-dizionario_movimenti = {
-    # R0
-    'M[0][0] basso': 'a+',
-    'M[0][0] dx': 'b+',
-    'M[0][1] sx': 'c+',
-    'M[0][1] basso': 'd+',
-    'M[0][1] dx': 'e+',
-    'M[0][2] sx': 'f+',
-    'M[0][2] basso': 'g+',
-    'M[0][2] dx': 'h+',
-    'M[0][3] sx': 'i+',
-    'M[0][3] basso': 'j+',
-    'M[0][3] dx': 'k+',
-    'M[0][4] sx': 'l+',
-    'M[0][4] basso': 'm+',
-    # R1
-    'M[1][0] basso': 'n+',
-    'M[1][0] dx': 'o+',
-    'M[1][0] alto': 'p+',
-    'M[1][1] sx': 'q+',
-    'M[1][1] basso': 'r+',
-    'M[1][1] dx': 's+',
-    'M[1][1] alto': 't+',
-    'M[1][2] sx': 'u+',
-    'M[1][2] basso': 'v+',
-    'M[1][2] dx': 'x+',
-    'M[1][2] alto': 'y+',
-    'M[1][3] sx': 'z+',
-    'M[1][3] basso': 'w+',
-    'M[1][3] dx': '1+',
-    'M[1][3] alto': '2+',
-    'M[1][4] sx': '3+',
-    'M[1][4] basso': '4+',
-    'M[1][4] alto': '5+',
-    # R2
-    'M[2][0] basso': '6+',
-    'M[2][0] dx': '7+',
-    'M[2][0] alto': '8+',
-    'M[2][1] sx': '9+',
-    'M[2][1] basso': 'ctrl+a',
-    'M[2][1] dx': 'ctrl+b',
-    'M[2][1] alto': 'ctrl+c',
-    'M[2][2] sx': 'ctrl+d',
-    'M[2][2] basso': 'ctrl+e',
-    'M[2][2] dx': 'ctrl+f',
-    'M[2][2] alto': 'ctrl+g',
-    'M[2][3] sx': 'ctrl+h',
-    'M[2][3] basso': 'ctrl+i',
-    'M[2][3] dx': 'ctrl+j',
-    'M[2][3] alto': 'ctrl+k',
-    'M[2][4] sx': 'ctrl+l',
-    'M[2][4] basso': 'ctrl+m',
-    'M[2][4] alto': 'ctrl+n',
-    # R3
-    'M[3][0] basso': 'ctrl+o',
-    'M[3][0] dx': 'ctrl+p',
-    'M[3][0] alto': 'ctrl+q',
-    'M[3][1] sx': 'ctrl+r',
-    'M[3][1] basso': 'ctrl+s',
-    'M[3][1] dx': 'ctrl+t',
-    'M[3][1] alto': 'ctrl+u',
-    'M[3][2] sx': 'ctrl+v',
-    'M[3][2] basso': 'ctrl+x',
-    'M[3][2] dx': 'ctrl+y',
-    'M[3][2] alto': 'ctrl+z',
-    'M[3][3] sx': 'ctrl+w',
-    'M[3][3] basso': 'ctrl+1',
-    'M[3][3] dx': 'ctrl+2',
-    'M[3][3] alto': 'ctrl+3',
-    'M[3][4] sx': 'ctrl+4',
-    'M[3][4] basso': 'ctrl+5',
-    'M[3][4] alto': 'ctrl+6',
-
-    # R4
-    'M[4][0] basso': 'ctrl+7',
-    'M[4][0] dx': 'ctrl+8',
-    'M[4][0] alto': 'ctrl+9',
-    'M[4][1] sx': 'alt+a',
-    'M[4][1] basso': 'alt+b',
-    'M[4][1] dx': 'alt+c',
-    'M[4][1] alto': 'alt+d',
-    'M[4][2] sx': 'alt+e',
-    'M[4][2] basso': 'alt+f',
-    'M[4][2] dx': 'alt+g',
-    'M[4][2] alto': 'alt+h',
-    'M[4][3] sx': 'alt+i',
-    'M[4][3] basso': 'alt+j',
-    'M[4][3] dx': 'alt+k',
-    'M[4][3] alto': 'alt+l',
-    'M[4][4] sx': 'alt+m',
-    'M[4][4] basso': 'alt+n',
-    'M[4][4] alto': 'alt+o',
-    # R5
-    'M[5][0] dx': 'alt+p',
-    'M[5][0] alto': 'alt+q',
-    'M[5][1] sx': 'alt+r',
-    'M[5][1] dx': 'alt+s',
-    'M[5][1] alto': 'alt+t',
-    'M[5][2] sx': 'alt+u',
-    'M[5][2] dx': 'alt+v',
-    'M[5][2] alto': 'alt+x',
-    'M[5][3] sx': 'alt+y',
-    'M[5][3] dx': 'alt+z',
-    'M[5][3] alto': 'alt+w',
-    'M[5][4] sx': 'alt+1',
-    'M[5][4] alto': 'alt+2',
-}
-
 x_start = 920
 offset = 95
 y_startR0 = 395
@@ -322,7 +214,7 @@ def send_input_gui(string):
 
 #Funzione che dati in input start(x,y) e end(x,y) clicca sullo schermo partendo da start e arriva in end in speed secondi.
 @decoratori.timestamp_decorator
-def send_native_touch( start = (0,0) , end = (0,0) , speed = 0.08 ):
+def send_native_touch( start = (0,0) , end = (0,0) , speed = 0.05 ):
     print(f"clicked - start = ({start[0] , start[1]}) e end = ({end[0] , end[1]})")
     pyautogui.moveTo(start, duration=0.001)
     pyautogui.mouseDown()  #Click left mouse
