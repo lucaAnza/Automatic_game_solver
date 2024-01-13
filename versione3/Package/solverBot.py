@@ -175,7 +175,7 @@ dizionario_movimenti_nativo = {
     'M[4][2] sx': (x_start+(offset*2),y_startR4,x_start+(offset*2)-offset,y_startR4),
     'M[4][2] basso': (x_start+(offset*2),y_startR4,x_start+(offset*2),y_startR4+offset),
     'M[4][2] dx': (x_start+(offset*2),y_startR4,x_start+(offset*2)+offset,y_startR4),
-    'M[4][2] alto': (x_start+(offset*2),y_startR4,x_start+(offset*2),y_startR4-offset),
+    'M[4][2] alto': (x_start+(offset*2), y_startR4, x_start+(offset*2), y_startR4-offset),
     'M[4][3] sx': (x_start+(offset*3),y_startR4,x_start+(offset*3)-offset,y_startR4),
     'M[4][3] basso': (x_start+(offset*3),y_startR4,x_start+(offset*3),y_startR4+offset),
     'M[4][3] dx': (x_start+(offset*3),y_startR4,x_start+(offset*3)+offset,y_startR4),
@@ -214,8 +214,8 @@ def send_input_gui(string):
 
 #Funzione che dati in input start(x,y) e end(x,y) clicca sullo schermo partendo da start e arriva in end in speed secondi.
 @decoratori.timestamp_decorator
-def send_native_touch( start = (0,0) , end = (0,0) , speed = 0.05 ):
-    print(f"clicked - start = ({start[0] , start[1]}) e end = ({end[0] , end[1]})")
+def send_native_touch( start = (0,0) , end = (0,0) , speed = 0.002 ):
+    #print(f"clicked - start = ({start[0] , start[1]}) e end = ({end[0] , end[1]})")
     pyautogui.moveTo(start, duration=0.001)
     pyautogui.mouseDown()  #Click left mouse
     pyautogui.moveTo(end , duration=speed)  
