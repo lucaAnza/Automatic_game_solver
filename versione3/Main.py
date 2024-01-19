@@ -10,6 +10,8 @@ from Package import *
 import tracemalloc
 from discord_webhook import DiscordWebhook, DiscordEmbed
 import pyautogui
+import subprocess
+import sys
 
 chri_webhook = "https://discord.com/api/webhooks/1184788603470090320/jqkYHRC-y7P920AYLdB1e08g1WPLWzIcelEssk1tG23VXXE2kvgsNUQUhg5q7fYZ86hU"
 luke_webhook = "https://discord.com/api/webhooks/1184915602431823944/3HyIjU1u40NnJUVpzzfBAEOAHZ9EZkiUwEeViffQLOxUwLpU25-dRR0-LJlx2snXbdsH"
@@ -31,7 +33,7 @@ side_global = 94
     
 
 def webhook_print( url , title , description , img_name = None , color = 'ff0000' , author = None , trofei_screen = False):
-    pc_user = "Luke-Laptop"
+    pc_user = "Luke-Laptop_real"
     
     webhook = DiscordWebhook(url=url)
     embed = DiscordEmbed(title=title,
@@ -147,6 +149,23 @@ def memory_stats(action="None"):
             current, peak = tracemalloc.get_traced_memory()
             print(
                 f"Istantanea = {int(current/MB)}Mb  ( {current}B )\n-----Picco = {int(peak/MB)}Mb  ( {peak}B )")
+            
+
+#Funzione che chiude il processo di Bluestack-App player e Bluestack X
+def close_bluestacks():
+    try:
+        #Bluestacks-5 close
+        powershell_command = 'Stop-Process -Name "HD-Player" -Force'  # Costruisci il comando PowerShell per chiudere BlueStacks
+        subprocess.run(["powershell", "-Command", powershell_command], check=True)   # Esegui il comando PowerShell
+        print("BlueStacks 5 chiuso con successo.")
+
+        #Bluestacks-X close
+        powershell_command = 'Stop-Process -Name "BlueStacks X" -Force'  # Costruisci il comando PowerShell per chiudere BlueStacks
+        subprocess.run(["powershell", "-Command", powershell_command], check=True)   # Esegui il comando PowerShell
+        print("BlueStacks X chiuso con successo.")
+    except subprocess.CalledProcessError:
+        print("Errore durante la chiusura di BlueStacks.")
+        sys.exit(1)
 
 
 
@@ -208,7 +227,7 @@ try:
         if consecutive_error == 80:
             check_error()
 
-        time.sleep(0.8)  # Ossigeno al processore
+        time.sleep(0.7)  # Ossigeno al processore
 
         # Cattura screenshot
         label = f'kz32'
@@ -266,11 +285,22 @@ try:
 
 except Exception as e:
     print(f"Errore{e}")
-    webhook_print(chri_webhook , "Errore durante l'esecuzione" , "Error: {e}" , color = 'ff0000' )
+    webhook_print(chri_webhook , "Errore durante l'esecuzione" , f"Error: {e}" , color = 'ff0000' )
+    # Chiude l'applicazione Bluestacks
+    time.sleep(3) 
+    solverBot.send_native_touch(start = (1100 , 920) , end = (1100 , 920) , speed=1)  #Click save game
+    time.sleep(10)
+    close_bluestacks()
     # Termina lo script
     sys.exit(1)
 
 # webhook in caso di terminazione
 webhook_print(chri_webhook , "Checkpoint" , "Script terminated... check terminal" , color = '03b2f8' )
 webhook_print(luke_webhook , "Update" , "TERMINAZIONE" , color = '03b2f8' , img_name='screenshot_dd_termination.png')
+# Chiude l'applicazione Bluestacks
+time.sleep(3) 
+solverBot.send_native_touch(start = (1100 , 920) , end = (1100 , 920) , speed=1)  #Click save game
+time.sleep(10)
+close_bluestacks()
+    
 
