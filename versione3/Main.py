@@ -16,7 +16,7 @@ import sys
 chri_webhook = "https://discord.com/api/webhooks/1184788603470090320/jqkYHRC-y7P920AYLdB1e08g1WPLWzIcelEssk1tG23VXXE2kvgsNUQUhg5q7fYZ86hU"
 luke_webhook = "https://discord.com/api/webhooks/1184915602431823944/3HyIjU1u40NnJUVpzzfBAEOAHZ9EZkiUwEeViffQLOxUwLpU25-dRR0-LJlx2snXbdsH"
 
-game_iteration = 8000 + 10
+game_iteration = 8000 
 
 # Coordinate Luke
 x_global = 5
@@ -84,7 +84,7 @@ def create_new_game():
     
     #Logica per riavere la matrice funzionale 
     time.sleep(20)
-    command = 'alt+3'  # Clicca il pulsante
+    command = 'alt+3'  # Clicca il pulsante torna a giocare
     solverBot.send_input_gui(command)
     time.sleep(2)
 
@@ -135,6 +135,9 @@ def create_new_game():
         if i == 0:   # Caso in cui ci troviamo in Sala Giochi
             webhook_print(luke_webhook , "Update" , "🏆 Trofei 🏆" , color = '03b2f8' , img_name = "screenshot_update_trofei.png" , trofei_screen= True)
         solverBot.send_input_gui(l_istruzioni[i])
+    # Fatto in modo per evitare che quando si vuole chiudere una partita, non continui in loop ad avviarne nuove
+    if game_iteration == 0:
+        game_iteration = 8000
 
 
 def memory_stats(action="None"):
@@ -186,8 +189,11 @@ try:
     print(f"{Fore.GREEN}Developed by lucaAnza & Manillin !{Style.RESET_ALL}")
     print("\n\n")
     print(f"{Fore.GREEN}Press S to start! {Style.RESET_ALL}", end='')
+    print(f"{Fore.GREEN}Press E to finish the game! {Style.RESET_ALL}", end='')
     fuck_it_we_ball = input("")
-    if fuck_it_we_ball != 's':
+    if fuck_it_we_ball == 'e':
+        game_iteration = 0
+    elif fuck_it_we_ball != 's':
         print(f"{Fore.RED}Script terminated...{Style.RESET_ALL}")
         sys.exit(1)
     print("Starting...")
@@ -242,7 +248,8 @@ try:
         matrix_number = analyseBot.get_matrix_item(immagine , type="Number" , x = x_global , y = y_global , side = side_global)  
 
         # Se almeno un elemento non l'ha riconosciuto [ prod == 0] non entra.
-        if (analyseBot.checkMatrixProduct(matrix_number) != 0):
+        prod = analyseBot.checkMatrixProduct(matrix_number)
+        if (prod != 0):
 
             # Debug analisi
             print(f"\n{Fore.YELLOW}Matrix : ")
@@ -270,6 +277,8 @@ try:
         print(f"\n{Fore.MAGENTA}------------------Iterazione({general_counter})------------------{Style.RESET_ALL}\n\n")
         general_counter += 1
 
+        
+
         # Controlli ogni tot cicli
         how_much = 2000
         if (general_counter % how_much == 0):
@@ -280,6 +289,28 @@ try:
             webhook_print(luke_webhook , "Update" , f"⬤ Complimenti hai raggiunto {general_counter} iterazioni!" , color = '03b2f8' , img_name=f'screenshot_{general_counter}_iterazioni.png')
             webhookL = DiscordWebhook(url=luke_webhook)
             print_coloured.print_green_ts("Webhook sent!")
+
+            # possibile caso in cui riconosce tutti 3 ( Possibile schermata bianca ) [ 3 perchè per la pizza si riconosce pixel bianco ]
+            if (prod == 205891132094649):  
+                print("Riconosciuto Matrice con prodotto = 90")
+                close = True
+                for i in range(num_righe) : 
+                    for j in range(num_colonne-1) :
+                        if( matrix_number[i][j] != matrix_number[i][j+1]):
+                            close = False
+                if(close) : 
+                    print("Chiusura bluestacks causa : Matrice composta da tutti 3")
+                    # Chiude l'applicazione Bluestacks
+                    time.sleep(3) 
+                    solverBot.send_native_touch(start = (1100 , 920) , end = (1100 , 920) , speed=1)  #Click save game
+                    time.sleep(10)
+                    close_bluestacks()
+                    # Termina lo script
+                    sys.exit(1)
+
+
+
+
     memory_stats("Stop")
 
 
