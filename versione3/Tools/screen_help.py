@@ -106,10 +106,17 @@ if (__name__ == '__main__'):
         for i in range(attesa):
             print(f"Screen tra {attesa-i} secondi...")
             time.sleep(1)
-            
-        path = take_screenshot(870, 330, 490, 620,fullScreen=True, label='Full')
+
+        path = take_screenshot(870, 330, 490, 620,fullScreen=False)
         immagine = cv2.imread(path)
+
+
+
+        
         set_grill(immagine, (5, 20), square_side=93)    # cambiare in base al pc
+        
+        
+        
         cv2.imwrite("output.png", immagine)
         # Verifica che l'immagine sia stata caricata correttamente
         if immagine is None:

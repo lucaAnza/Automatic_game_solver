@@ -3,13 +3,15 @@
 ## STEP1 ( Configurazione librerie )
 
 1. scrivere "python3" nella powershell e scaricare python dallo store
-2. pip3 install -r requirements.txt       ( scarichi le librerie )
-3. pip install --upgrade pillow  
+2. pip install --upgrade pillow  
+3. pip3 install -r requirements.txt       ( scarichi le librerie )
+
 
 
 ## STEP2 ( Setting Visual Studio Code )
 
-1. Eseguire uno screenshot avendo l'app vodafone aperta in fullscreen usando **/Tools/screen_help.py** (scelta=1)
+1. Eseguire uno screenshot avendo l'app vodafone aperta in fullscreen usando **/Tools/screen_help.py** (scelta=1) l'immagine
+verrà salvata in __/Screenshot/screenshotFull.png__
 
 2. Una volta che si ha il fullScreen dell'app aperta, lo si sposta nel desktop.
 
@@ -20,7 +22,8 @@ in fullscreen.
 
 5. Aiutandoti con paint analizza l'immagine **output.png** e dovresti fare in modo di avere un puntino nello stesso punto per ogni item.
 
-6. Dare in input a **Package/analyseBot.py** l'immagine **output.png** che ci sembra quella settata con la migliore griglia.
+6. Dare in input a **Package/analyseBot.py** l'immagine **output.png** che ci sembra quella settata con la migliore griglia. 
+( RICORDATI DI CAMBIARE I PARAMETRI )
 
 
 
