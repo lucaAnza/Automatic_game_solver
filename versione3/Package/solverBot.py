@@ -2,12 +2,12 @@ import pyautogui
 from colorama import Fore, Style
 import os
 import cv2
+from Package import globals
 
 if __name__ == "__main__" or __name__ == 'solverBot':
     import decoratori
     import print_coloured as p
 else:
-
     from Package import decoratori
     from Package import print_coloured as p
 
@@ -19,8 +19,8 @@ os.system("color")  # abilita i colori nella shell
 # Global
 delay_keyPress_single = 0.04
 delay_keyPress_combo = 0.01
-num_righe = 6
-num_colonne = 5
+num_righe = globals.num_righe
+num_colonne = globals.num_colonne
 offset = 100
 
 # {Fore.GREEN}{datetime.datetime.now().strftime('%H:%M:%S:%f')[:-3]} \t

@@ -30,6 +30,11 @@ in fullscreen.
 2. Importa le Macro
 3. Cambia le 3 Macro finali ( Alt+5  , Alt+6 , Alt+7)
 
+## STEP4 ( Starting bot options )
+Quando avvii il bot ti trovi davanti a 2 opzioni : 
+1. 's' -> avvia il bot ed esegue di **default 8000** iterazioni e poi riavvia una nuova partita
+2. 'e' -> termina immediatamente la partita in corso e successivamente avvia altre partite con un numero di iterazioni pari a **8000**
+
 
 ## STEP-Extra
 
