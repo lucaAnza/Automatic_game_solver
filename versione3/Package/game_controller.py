@@ -27,8 +27,8 @@ def check_error():
     print_coloured.print_cyan_ts("Possibile conflitto trovato... going to sleep")
     webhook.webhook_print(globals.chri_webhook , "Intervento" , "Situazione di stallo, going to sleep" , color = 'ff0000')
     time.sleep(8)
-    command = 'alt+3'  # Clicca il pulsante "continua a giocare"
-    solverBot.send_input_gui(command)
+    solverBot.send_native_touch(start = (1100 , 540) , end = (1100 , 540) , speed=0.1)    # Clicca torna a giocare
+    solverBot.send_native_touch(start = (1100 , 540) , end = (1100 , 540) , speed=1)    # Clicca torna a giocare
 
 def stall_fixed():
     print_coloured.print_cyan_ts("Conflitto superato... continuo a giocare")
@@ -41,8 +41,8 @@ def create_new_game():
     
     #Logica per riavere la matrice funzionale 
     time.sleep(20)
-    command = 'alt+3'  # Clicca il pulsante torna a giocare
-    solverBot.send_input_gui(command)
+    solverBot.send_native_touch(start = (1100 , 540) , end = (1100 , 540) , speed=0.1)    # Clicca torna a giocare
+    solverBot.send_native_touch(start = (1100 , 540) , end = (1100 , 540) , speed=1)    # Clicca torna a giocare
     time.sleep(2)
 
     label = f'kz32'
@@ -54,15 +54,10 @@ def create_new_game():
         sys.exit()
 
     matrix_number = analyseBot.get_matrix_item(immagine , type="Number" , x = globals.x_global , y = globals.y_global , side = globals.side_global)  
-   
+    
     counter = 0
-    slide_salagiochi = "alt+5"  # Imposta clicca "Spostati con la rotellina in giù"
-    play_new_game = "alt+6"    # Imposta clicca  "Avvia nuovo gioco"
-    start_game = "alt+7"     # Imposta clicca "Avvia partita"
-    l_istruzioni = [slide_salagiochi, play_new_game, start_game]
-
     analyseBot.print_matrix(matrix_number)
-    # press 'a' fino a quando la matrice risulta leggibile -> tempo da bruciare
+    # esegue mossa fino a quando la matrice risulta leggibile -> tempo da bruciare
     while (analyseBot.checkMatrixProduct(matrix_number) != 0):
         label = f'kz32'
         screenBot.take_screenshot(870, 330, 490, 620, label)
@@ -76,7 +71,7 @@ def create_new_game():
         if counter % 10 == 0:      # Debug
             print_coloured.print_green_ts("Partita in chiusura... attendere")
         
-        solverBot.send_input_gui('a+')    # Esegue una mossa
+        solverBot.send_native_touch(start = (920 , 395) , end = (920 , 490) , speed=0.5)    # Esegue M[0][0] giu' 
         time.sleep(4)
         counter += 1
         
@@ -87,13 +82,18 @@ def create_new_game():
     time.sleep(0.5)
     pyautogui.click(x=1110,y=939)   # Clicca il pulsante "Torna alla sala giochi"  [fatto 2 volte per problemi con l'APP]
     
-    for i in range(len(l_istruzioni)):
-        time.sleep(5)
-        if i == 0:   # Caso in cui ci troviamo in Sala Giochi
-            webhook.webhook_print(globals.luke_webhook , "Update" , "🏆 Trofei 🏆" , color = '03b2f8' , img_name = "screenshot_update_trofei.png" , trofei_screen= True)
-        solverBot.send_input_gui(l_istruzioni[i])
-
-
+    
+    # Macro -> 1. Slide 2. Select Game 3. Start Game
+    time.sleep(4)
+    pyautogui.scroll(-230)  # Spostati con la rotellina in giù
+    webhook.webhook_print(globals.luke_webhook , "Update" , "🏆 Trofei 🏆" , color = '03b2f8' , img_name = "screenshot_update_trofei.png" , trofei_screen= True)
+    time.sleep(4)
+    solverBot.send_native_touch(start = (1100 , 930) , end = (1100 , 930) , speed=0.1)  #Select the game
+    solverBot.send_native_touch(start = (1100 , 930) , end = (1100 , 930) , speed=1)    #Select the game 
+    time.sleep(4)
+    solverBot.send_native_touch(start = (1100 , 930) , end = (1100 , 930) , speed=0.1)  #Click start game
+    solverBot.send_native_touch(start = (1100 , 930) , end = (1100 , 930) , speed=1)    #Click start game
+        
 
 #Funzione per monitorare la memoria
 def memory_stats(action="None"):
