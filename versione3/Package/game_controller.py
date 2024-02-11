@@ -85,7 +85,7 @@ def create_new_game():
     
     # Macro -> 1. Slide 2. Select Game 3. Start Game
     time.sleep(4)
-    pyautogui.scroll(-230)  # Spostati con la rotellina in giù
+    pyautogui.scroll(-130)  # Spostati con la rotellina in giù
     webhook.webhook_print(globals.luke_webhook , "Update" , "🏆 Trofei 🏆" , color = '03b2f8' , img_name = "screenshot_update_trofei.png" , trofei_screen= True)
     time.sleep(4)
     solverBot.send_native_touch(start = (1100 , 930) , end = (1100 , 930) , speed=0.1)  #Select the game
