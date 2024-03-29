@@ -40,7 +40,7 @@ Using Discord Webhook the bot is able to update his status.
 ## Step2 ( Setting Visual Studio Code )
 
 1. Eseguire uno screenshot avendo l'app vodafone aperta in fullscreen usando **/Tools/screen_help.py** (scelta=1) l'immagine
-verrà salvata in __/Screenshot/screenshotFull.png__
+verrà salvata in **/Screenshot/screenshotFull.png**
 
 2. Una volta che si ha il fullScreen dell'app aperta, lo si sposta nel desktop.
 
@@ -51,7 +51,7 @@ in fullscreen.
 
 5. Aiutandoti con paint analizza l'immagine **output.png** e dovresti fare in modo di avere un puntino nello stesso punto per ogni item.
 
-6. Dare in input a **Package/analyseBot.py** l'immagine **output.png** che ci sembra quella settata con la migliore griglia. 
+6. Dare in input a **Package/analyseBot.py** l'immagine **output.png** che ci sembra quella settata con la migliore griglia.
 ( RICORDATI DI CAMBIARE I PARAMETRI )
 
 
@@ -80,3 +80,23 @@ Quando avvii il bot ti trovi davanti a 2 opzioni:
 5. pip3 install -r requirements.txt     (scarichi le librerie)
 6. pip3 freeze > requirements.txt  ( nel caso vuoi salvare le librerie )
 7. .\Script\deactivate   ( disattivazione ambiente virtuale)
+
+
+
+# Modules interaction
+
+· Each module is called from Main.py
+
+```mermaid
+sequenceDiagram
+Bluestacks instance ->> analyseBot.py: Screenshot.png
+Note right of Bluestacks instance: Screen made by<br><screenBot.py>
+
+analyseBot.py->>solverBot.py: Int matrix[]
+Note right of solverBot.py: solverBot try to<br>Understand the best<br>moves to do.
+solverBot.py-->> analyseBot.py:Moves
+Note right of analyseBot.py: Moves is launched<br>from <game_controller.py>
+analyseBot.py-->>Bluestacks instance: Moves
+Note right of Bluestacks instance: Every 2k iteration<br>is sent a discord webhook<br>by <webhook.py>
+
+```
