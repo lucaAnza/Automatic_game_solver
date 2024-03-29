@@ -83,4 +83,4 @@ Quando avvii il bot ti trovi davanti a 2 opzioni:
 4. .\Scripts\activate       ( attivazione ambiente virtuale)
 5. pip3 install -r requirements.txt     (scarichi le librerie)
 6. pip3 freeze > requirements.txt  ( nel caso vuoi salvare le librerie )
-7. .\Script\deactivate   ( disattivazione ambiente virtuale)
+7. .\Script\deactivate   ( disattivazione ambiente virtuale)  
