@@ -11,7 +11,7 @@ It is a 100% *Python* software.
 · Pip3 package manager  
 
 
-## Main features
+## Main features ( Refers to V4 )
 
 ### 1. Pixel analisys
 
@@ -33,4 +33,4 @@ Create macro, using *pyautogui*, that can make the moves in the game.
 
 ## 4. Notification interface
 
-Using Discord Webhook, the bot is able to update his status.
+Using Discord Webhook the bot is able to update his status.
