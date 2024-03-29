@@ -34,3 +34,4 @@ Create macro, using *pyautogui*, that can make the moves in the game.
 ## 4. Notification interface
 
 Using Discord Webhook the bot is able to update his status.
+
