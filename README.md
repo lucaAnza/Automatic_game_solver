@@ -18,6 +18,8 @@ It is a 100% *Python* software.
 
 Made with OpenCV, is able to recognise the different between object in a specific set.
 
+<img src = "media/pixel_analisys.png" width="35%"></img>
+
 ### 2. Game solver
 
 Algorithm that takes an input matrix of objects and returns the best move.
@@ -31,6 +33,8 @@ graph LR;
 ### 3. Game controller
 
 Create macro, using *pyautogui*, that can make the moves in the game.
+
+![GIF](media/gif.mp4)
 
 ### 4. Notification interface
 
