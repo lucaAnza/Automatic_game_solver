@@ -34,7 +34,7 @@ graph LR;
 
 Create macro, using *pyautogui*, that can make the moves in the game.
 
-![GIF](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbThmdTdxeXZ4NHR0ajQxa3RyMG1mcXJmNDdjZm9wYXE5eTR0dGZ3NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/G7Q9o4DIB8VVUajGCK/giphy.gif)
+![GIF](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWZ6aDBjazByaDc1ZGwwd3dubGM1Y3FiYXF0dDNsejhiM3BubHJjeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Nh2h5QzKVQaexRuCAJ/giphy.gif)
 
 
 ### 4. Notification interface
