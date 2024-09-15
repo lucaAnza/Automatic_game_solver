@@ -34,12 +34,20 @@ graph LR;
 
 Create macro, using *pyautogui*, that can make the moves in the game.
 
-![GIF](media/gif.mp4)
+![GIF](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbThmdTdxeXZ4NHR0ajQxa3RyMG1mcXJmNDdjZm9wYXE5eTR0dGZ3NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/G7Q9o4DIB8VVUajGCK/giphy.gif)
+
 
 ### 4. Notification interface
 
 Using Discord Webhook the bot is able to update his status.  
 
+<br>
+<p> Log - Notify </p>
+<img src = "media/discord1.png" width="30%"></img>
+
+<br>
+<p> Update - Notify </p>
+<img src = "media/discord2.png" width="30%"></img>
 
 
 
