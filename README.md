@@ -68,6 +68,13 @@ analyseBot.py-->>Bluestacks instance: Moves
 Note right of Bluestacks instance: Every 2k iteration<br>is sent a discord webhook<br>by <webhook.py>
 
 ```
+## Real-time recognition technique 
+The real-time recognition technique is the key innovation of the system. By designing a constant-time (≈ O(1)) object recognition strategy instead of relying on heavier computer vision pipelines, we achieved **high-speed decision** cycles under strict constraints. 
+
+This which was necessary because:
+- we do not have access to the application’s source code
+- all state must be inferred directly from pixels
+- latency between “seeing” and “acting” must be minimal
 
 ## How to Set Up New Hardware 
 
