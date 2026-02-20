@@ -69,56 +69,116 @@ Note right of Bluestacks instance: Every 2k iteration<br>is sent a discord webho
 
 ```
 
-## How to Setup a new hardware (🇮🇹IT explanation) 
+## How to Set Up New Hardware 
 
-### Step1 ( Configurazione librerie )
+⚠️ **Alert** : It is no longer possible to try the software because the game it depends on is no longer available.
 
-1. scrivere "python3" nella powershell e scaricare python dallo store
-2. pip install --upgrade pillow
-3. pip3 install -r requirements.txt ( scarichi le librerie )
+### Step 1 (Library Configuration)
 
+1. Type `python3` in PowerShell and install Python from the Microsoft Store.
+2. Run:
 
+   ```bash
+   pip install --upgrade pillow
+   ```
+3. Install the required libraries:
 
-### Step2 ( Setting Visual Studio Code )
+   ```bash
+   pip3 install -r requirements.txt
+   ```
 
-1. Eseguire uno screenshot avendo l'app aperta in fullscreen usando **/Tools/screen_help.py** (scelta=1) l'immagine
-verrà salvata in **/Screenshot/screenshotFull.png**
+   (This downloads all the project dependencies.)
 
-1. Una volta che si ha il fullScreen dell'app aperta, lo si sposta nel desktop.
+---
 
-2. Una volta spostata nel desktop. Si avvia il programma **/Tools/screen_help.py** (scelta=2) e si apre l'immagine precedentemente fatta
-in fullscreen.
+### Step 2 (Visual Studio Code Setup)
 
-1. Ora cambiando i parametri di **set_grill (x,y) e square_side**, generare l'immagine **output.png**
+1. Take a screenshot with the app open in fullscreen using **/Tools/screen_help.py** (option = 1).
+   The image will be saved as:
 
-2. Aiutandoti con paint analizza l'immagine **output.png** e dovresti fare in modo di avere un puntino nello stesso punto per ogni item.
+   ```
+   /Screenshot/screenshotFull.png
+   ```
 
-3. Dare in input a **Package/analyseBot.py** l'immagine **output.png** che ci sembra quella settata con la migliore griglia.
-( RICORDATI DI CAMBIARE I PARAMETRI )
+2. Once you have the fullscreen screenshot, move it to the Desktop.
 
+3. After moving it to the Desktop, run **/Tools/screen_help.py** again (option = 2) and open the previously created fullscreen image.
 
-### Step3 ( Setting Bluestacks )
+4. By adjusting the parameters `set_grill (x, y)` and `square_side`, generate the file:
 
-1. Vai in impostazioni e togli CTRL+M sui **shortcut**
-2. Importa le Macro
-3. Cambia le 3 Macro finali ( Alt+5  , Alt+6 , Alt+7)
+   ```
+   output.png
+   ```
 
-### STEP4 ( Starting bot options )
+5. Using Paint, analyze **output.png**.
+   You should aim to have a dot positioned in the same exact spot for every item.
 
-Quando avvii il bot ti trovi davanti a 2 opzioni:
+6. Provide **Package/analyseBot.py** with the image `output.png` that appears to have the best grid configuration.
+   (REMEMBER TO UPDATE THE PARAMETERS.)
 
-1. 's' -> avvia il bot ed esegue di **default 8000** iterazioni e poi riavvia una nuova partita
-2. 'e' -> termina immediatamente la partita in corso e successivamente avvia altre partite con un numero di iterazioni pari a **8000**
+---
 
-### STEP-Extra
+### Step 3 (Bluestacks Setup)
 
-#### Nel caso si volesse usare un ambiente virtuale ecco come settarlo
+1. Go to Settings and remove `CTRL+M` from the shortcuts.
+2. Import the Macros.
+3. Modify the last three Macros:
 
-1. pip3 install virtualenv
-2. python3 -m venv __/path/to/new/virtual/environment__
-3. Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-4. .\Scripts\activate       ( attivazione ambiente virtuale)
-5. pip3 install -r requirements.txt     (scarichi le librerie)
-6. pip3 freeze > requirements.txt  ( nel caso vuoi salvare le librerie )
-7. .\Script\deactivate   ( disattivazione ambiente virtuale)
+   ```
+   Alt+5
+   Alt+6
+   Alt+7
+   ```
+
+---
+
+### Step 4 (Starting Bot Options)
+
+When you start the bot, you will see two options:
+
+1. `'s'` → Starts the bot and runs **8000 iterations by default**, then restarts a new game.
+2. `'e'` → Immediately ends the current game and then starts new games with **8000 iterations**.
+
+---
+
+### Step Extra (Using a Virtual Environment)
+
+If you want to use a virtual environment, here is how to set it up:
+
+1. Install virtualenv:
+
+   ```bash
+   pip3 install virtualenv
+   ```
+2. Create a virtual environment:
+
+   ```bash
+   python3 -m venv /path/to/new/virtual/environment
+   ```
+3. Set execution policy (Windows):
+
+   ```bash
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+   ```
+4. Activate the virtual environment:
+
+   ```bash
+   .\Scripts\activate
+   ```
+5. Install the required libraries:
+
+   ```bash
+   pip3 install -r requirements.txt
+   ```
+6. Save installed libraries (optional):
+
+   ```bash
+   pip3 freeze > requirements.txt
+   ```
+7. Deactivate the virtual environment:
+
+   ```bash
+   .\Scripts\deactivate
+   ```
+
 
